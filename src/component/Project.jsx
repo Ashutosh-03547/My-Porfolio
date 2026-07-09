@@ -162,7 +162,7 @@ const styles = {
   },
 
   activeFilter: {
-    background: "#222",
+    background: "#0c058f",
     color: "#fff",
   },
 
