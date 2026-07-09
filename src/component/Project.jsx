@@ -1,249 +1,210 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from "react";
+import project1 from "../assets/project1.png";
+import project2 from "../assets/project2.png";
+import project3 from "../assets/project3.png";
+import project4 from "../assets/project4.png";
+
+
+const projects = [
+  {
+    id: 1,
+    image: project1,
+    title: "MERN Chat Application",
+    category: "App",
+    github: "https://github.com/yourusername/chat-app",
+    demo: "https://chat-app.vercel.app",
+  },
+
+  {
+    id: 2,
+    image: project2,
+    title: "Portfolio Website",
+    category: "Web",
+    github: "https://github.com/yourusername/portfolio",
+    demo: "https://portfolio.vercel.app",
+  },
+
+  {
+    id: 3,
+    image: project3,
+    title: "Weather App",
+    category: "App",
+    github: "#",
+    demo: "#",
+  },
+
+  {
+    id: 4,
+    image: project4,
+    title: "Dashboard UI",
+    category: "Design",
+    github: "#",
+    demo: "#",
+  },
+];
+
+
+const filters = ["All", "Web", "App", "Design"];
 
 const Project = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [active, setActive] = useState("All");
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      image: 'https://via.placeholder.com/300x200?text=E-Commerce',
-      description: 'A full-stack e-commerce platform built with React and Node.js featuring product catalog, shopping cart, and payment integration.',
-      technologies: 'React, Node.js, MongoDB, Stripe'
-    },
-    {
-      id: 2,
-      title: 'Task Management App',
-      image: 'https://via.placeholder.com/300x200?text=Task+Manager',
-      description: 'A collaborative task management application with real-time updates and user authentication.',
-      technologies: 'React, Firebase, Tailwind CSS'
-    },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      image: 'https://via.placeholder.com/300x200?text=Weather+App',
-      description: 'Interactive weather dashboard displaying real-time weather data with forecasts and location search.',
-      technologies: 'React, OpenWeatherMap API, Chart.js'
-    },
-    {
-      id: 4,
-      title: 'Social Media Feed',
-      image: 'https://via.placeholder.com/300x200?text=Social+Media',
-      description: 'Social networking platform with post creation, comments, likes, and user profiles.',
-      technologies: 'React, Express, PostgreSQL'
-    },
-    {
-      id: 5,
-      title: 'Blog Platform',
-      image: 'https://via.placeholder.com/300x200?text=Blog',
-      description: 'Content management system for creating and sharing blog posts with markdown support.',
-      technologies: 'Next.js, GraphQL, MongoDB'
-    },
-    {
-      id: 6,
-      title: 'Fitness Tracker',
-      image: 'https://via.placeholder.com/300x200?text=Fitness',
-      description: 'Health and fitness tracking app with workout logging and progress analytics.',
-      technologies: 'React Native, Firebase, D3.js'
-    }
-  ];
-
-  const styles = {
-    container: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '40px 20px',
-      fontFamily: 'Arial, sans-serif'
-    },
-    title: {
-      textAlign: 'center',
-      fontSize: '2.5rem',
-      marginBottom: '40px',
-      color: '#333'
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-      gap: '24px',
-      marginBottom: '20px'
-    },
-    card: {
-      backgroundColor: '#fff',
-      borderRadius: '8px',
-      overflow: 'hidden',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-      cursor: 'pointer',
-      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-      border: '1px solid #e0e0e0'
-    },
-    cardHover: {
-      transform: 'translateY(-8px)',
-      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15)'
-    },
-    cardImage: {
-      width: '100%',
-      height: '200px',
-      objectFit: 'cover'
-    },
-    cardContent: {
-      padding: '20px'
-    },
-    cardTitle: {
-      fontSize: '1.25rem',
-      fontWeight: 'bold',
-      marginBottom: '8px',
-      color: '#333'
-    },
-    cardText: {
-      fontSize: '0.95rem',
-      color: '#666',
-      lineHeight: '1.4'
-    },
-    modalOverlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 1000
-    },
-    modal: {
-      backgroundColor: '#fff',
-      borderRadius: '12px',
-      padding: '30px',
-      maxWidth: '600px',
-      width: '90%',
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
-      animation: 'slideIn 0.3s ease'
-    },
-    modalImage: {
-      width: '100%',
-      height: '300px',
-      objectFit: 'cover',
-      borderRadius: '8px',
-      marginBottom: '20px'
-    },
-    modalTitle: {
-      fontSize: '1.75rem',
-      fontWeight: 'bold',
-      marginBottom: '12px',
-      color: '#333'
-    },
-    modalDescription: {
-      fontSize: '1rem',
-      lineHeight: '1.6',
-      color: '#555',
-      marginBottom: '15px'
-    },
-    modalTech: {
-      backgroundColor: '#f5f5f5',
-      padding: '12px',
-      borderRadius: '6px',
-      marginBottom: '20px',
-      fontSize: '0.95rem',
-      color: '#444'
-    },
-    techLabel: {
-      fontWeight: 'bold',
-      marginBottom: '5px'
-    },
-    closeButton: {
-      backgroundColor: '#ff6b6b',
-      color: '#fff',
-      border: 'none',
-      padding: '10px 20px',
-      borderRadius: '6px',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      fontWeight: 'bold',
-      transition: 'background-color 0.3s ease'
-    },
-    closeButtonHover: {
-      backgroundColor: '#ff5252'
-    }
-  };
-
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [hoveredClose, setHoveredClose] = useState(false);
+  const filtered =
+    active === "All"
+      ? projects
+      : projects.filter((item) => item.category === active);
 
   return (
-    <div style={styles.container}>
-      <style>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        @media (max-width: 768px) {
-          .project-grid {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .project-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-      
-      <h1 style={styles.title}>My Projects</h1>
-      
-      <div style={styles.grid} className="project-grid">
-        {projects.map((project) => (
-          <div
-            key={project.id}
+    <section id="projects" style={styles.projectSection}>
+      <h2 style={styles.title}>Portfolio</h2>
+      <span style={styles.subtitle}>Most Recent Work</span>
+
+      {/* Filter Buttons */}
+      <div style={styles.filterContainer}>
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            onClick={() => setActive(filter)}
             style={{
-              ...styles.card,
-              ...(hoveredCard === project.id ? styles.cardHover : {})
+              ...styles.filterButton,
+              ...(active === filter ? styles.activeFilter : {}),
             }}
-            onMouseEnter={() => setHoveredCard(project.id)}
-            onMouseLeave={() => setHoveredCard(null)}
-            onClick={() => setSelectedProject(project)}
           >
-            <img src={project.image} alt={project.title} style={styles.cardImage} />
-            <div style={styles.cardContent}>
-              <div style={styles.cardTitle}>{project.title}</div>
-              <div style={styles.cardText}>{project.description.substring(0, 80)}...</div>
-            </div>
-          </div>
+            {filter}
+          </button>
         ))}
       </div>
 
-      {selectedProject && (
-        <div style={styles.modalOverlay} onClick={() => setSelectedProject(null)}>
-          <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <img src={selectedProject.image} alt={selectedProject.title} style={styles.modalImage} />
-            <h2 style={styles.modalTitle}>{selectedProject.title}</h2>
-            <p style={styles.modalDescription}>{selectedProject.description}</p>
-            <div style={styles.modalTech}>
-              <div style={styles.techLabel}>Technologies:</div>
-              <div>{selectedProject.technologies}</div>
-            </div>
-            <button
-              style={{
-                ...styles.closeButton,
-                ...(hoveredClose ? styles.closeButtonHover : {})
-              }}
-              onMouseEnter={() => setHoveredClose(true)}
-              onMouseLeave={() => setHoveredClose(false)}
-              onClick={() => setSelectedProject(null)}
+      {/* Project Cards */}
+      <div style={styles.container}>
+        {filtered.map((project) => (
+          <div
+            key={project.id}
+            style={styles.card}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow =
+                "0 15px 35px rgba(0,0,0,.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 5px 15px rgba(0,0,0,.08)";
+            }}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              style={styles.image}
+            />
+
+            <h3 style={styles.projectTitle}>{project.title}</h3>
+
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              style={styles.demoButton}
             >
-              Close
-            </button>
+              Demo
+              <i
+                className="bx bx-right-arrow-alt"
+                style={{ marginLeft: "6px", fontSize: "20px" }}
+              ></i>
+            </a>
           </div>
-        </div>
-      )}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
+const styles = {
+  projectSection: {
+    padding: "5rem 1rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    background: "#fff",
+  },
+
+  title: {
+    fontSize: "3rem",
+    fontWeight: "700",
+    marginBottom: "0.5rem",
+    color: "#222",
+  },
+
+  subtitle: {
+    color: "#777",
+    marginBottom: "3rem",
+    fontSize: "1rem",
+  },
+
+  filterContainer: {
+    display: "flex",
+    gap: "1rem",
+    marginBottom: "3rem",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+
+  filterButton: {
+    padding: "10px 20px",
+    border: "none",
+    background: "white",
+    borderRadius: "10px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "500",
+    transition: "0.3s",
+  },
+
+  activeFilter: {
+    background: "#222",
+    color: "#fff",
+  },
+
+  container: {
+    width: "100%",
+    maxWidth: "1100px",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
+    gap: "2rem",
+  },
+
+  card: {
+    border: "1px solid #ddd",
+    borderRadius: "20px",
+    padding: "1.2rem",
+    transition: "0.3s",
+    boxShadow: "0 5px 15px rgba(0,0,0,.08)",
+    background: "#fff",
+  },
+
+  image: {
+    width: "100%",
+    height: "220px",
+    objectFit: "cover",
+    borderRadius: "18px",
+  },
+
+  projectTitle: {
+    marginTop: "1rem",
+    marginBottom: "1rem",
+    fontSize: "1.35rem",
+    fontWeight: "600",
+    color: "#222",
+  },
+
+  demoButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    textDecoration: "none",
+    color: "#555",
+    fontWeight: "500",
+    fontSize: "16px",
+  },
+};
 export default Project;
