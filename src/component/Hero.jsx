@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
 	return (
-		<section style={styles.section} aria-label="Hero">
+		<section id="home" style={styles.section} aria-label="Hero">
 			<div className=" "style={styles.container}>
 				<div style={styles.text}>
 					<h1 style={styles.title}>Hi, I'm Ashutosh</h1>
@@ -111,29 +111,13 @@ const styles = {
 	},
 	heropng: {
 		width: 300,
-		height: 300,
+		height: 320,
 		borderRadius: '50%',
 		background: 'linear-gradient(135deg, #1c5ba8, #691eeb)',
 		boxShadow: '0 8px 30px rgba(2,6,23,0.6)',
 	},
 	
-	/*card: {
-		width: 250,
-		height: 250,
-		borderRadius: 16,
-		background: 'linear-gradient(135deg, rgba(79,70,229,0.18), rgba(16,185,129,0.08))',
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		flex: '0 0 220px',
-	},*/
-	/*avatar: {
-		width: 160,
-		height: 160,
-		borderRadius: '50%',
-		background: 'linear-gradient(135deg, #60a5fa, #7c3aed)',
-		boxShadow: '0 8px 30px rgba(2,6,23,0.6)'
-	}*/
+
 };
 
 export default Hero;
