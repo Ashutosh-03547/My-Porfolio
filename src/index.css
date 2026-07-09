@@ -3,7 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
