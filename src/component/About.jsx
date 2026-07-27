@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-
+import aboutpic from "../assets/aboutpic.png";
 
 const About = () => {
     return (
@@ -13,7 +13,7 @@ const About = () => {
                     {/* Left: Image */}
                     <div className="w-full md:w-1/3">
                         <img style={styles.profilepic}
-                            src="src/assets/profilepic-removebg-preview.png"
+                            src={aboutpic}
                             alt="Profile"
                             className="rounded-2xl w-full h-auto shadow-lg"
                         />
