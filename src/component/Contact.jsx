@@ -121,7 +121,7 @@ const styles = {
 
     container: {
         width: "100%",
-        maxWidth: "1100px",
+        maxWidth: "950px",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit,minmax(420px,1fr))",
         gap: "4rem",
