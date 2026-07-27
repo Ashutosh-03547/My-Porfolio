@@ -123,7 +123,7 @@ const styles = {
         width: "100%",
         maxWidth: "900px",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,minmax(420px,1fr))",
+        gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
         gap: "3rem",
     },
 
