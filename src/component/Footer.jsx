@@ -13,7 +13,7 @@ const Footer = () => {
 
             <div style={styles.socials}>
                 <a
-                    href="https://linkedin.com/in/your-linkedin"
+                    href="https://www.linkedin.com/in/ashutosh-pathy-745905323/"
                     target="_blank"
                     rel="noreferrer"
                     style={styles.icon}
@@ -22,7 +22,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                    href="https://github.com/your-github"
+                    href="https://github.com/Ashutosh-03547"
                     target="_blank"
                     rel="noreferrer"
                     style={styles.icon}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useState } from "react";
 
 
 const About = () => {
@@ -27,7 +27,8 @@ const About = () => {
                                 { title: "Completed", desc: "8 + Projects", icon: "bx bx-folder-open" },
                                 { title: "TechStack", desc: "MERN",icon: "bx bx-user" },
                             ].map((item, index) => (
-                                <div key={index} className="bg-white p-4 rounded-xl border border-gray-200 shadow-md flex flex-col items-center justify-center text-center  ">
+                                <div key={index} className="bg-white p-4 rounded-xl border border-gray-200 shadow-md flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+                                >
                                     {item.icon && (
                                         <i className={`${item.icon} text-3xl text-gray-800 mb-2`} aria-hidden="true" />
                                     )}
@@ -41,14 +42,20 @@ const About = () => {
                             I am a Computer Science student and Full-Stack Developer passionate about building modern web applications using React, Node.js, Express, and MongoDB. I enjoy learning new technologies and solving real-world problems through clean and efficient code.
                         </p>
 
-                        <button style={styles.button} className="bg-#0c058f text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition">
+                        <a
+                            href="/Ashutosh-Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={styles.button}
+                           
+                        >
                             Download CV 📄
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-    );
+    );//#0c058f 
 };
 
 
@@ -92,6 +99,7 @@ const styles = {
         borderRadius: 8,
         textDecoration: 'none',
         fontWeight: 600,
+        color:'white',
         background:'#4f46e5'
     },
     

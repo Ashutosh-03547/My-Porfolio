@@ -1,4 +1,5 @@
 import React from "react";
+import heroProfile from "../assets/heroprofile-removebg-preview.png";
 
 const Hero = () => {
 	return (
@@ -41,12 +42,23 @@ const Hero = () => {
 				</div>
 
 				{/* Image */}
-				<div className="flex justify-center flex-1">
+				<div className="relative flex justify-center flex-1">
 					<img
-						src="src/assets/heroprofile-removebg-preview.png"
+						src={heroProfile}
 						alt="Profile"
 						style={styles.heropng}
 					/>
+					<div className="absolute top-8 right-0 md:right-10 bg-white text-black text-sm px-3 py-1 rounded-full flex items-center shadow-lg">
+						<i className="bx bx-data text-orange-500 mr-2"></i> My SQL
+					</div>
+
+					<div className="absolute bottom-10 left-0 md:left-12 bg-white text-black text-sm px-3 py-1 rounded-full flex items-center shadow-lg">
+						<i className="bx bxl-javascript text-green-500 mr-2"></i> Javascript
+					</div>
+
+					<div className="absolute bottom-6 right-0 md:right-10 bg-white text-black text-sm px-3 py-1 rounded-full flex items-center shadow-lg">
+						<i className="bx bxl-react text-blue-500 mr-2"></i> REACT JS
+					</div>
 				</div>
 
 				{/* Social Icons */}
@@ -54,7 +66,7 @@ const Hero = () => {
 					className="hidden lg:flex fixed left-5 top-1/2 -translate-y-1/2 flex-col gap-5"
 					style={styles.social}
 				>
-					<a href="https://linkedin.com" target="_blank">
+					<a href="https://www.linkedin.com/in/ashutosh-pathy-745905323/" target="_blank">
 						<i className="bx bxl-linkedin text-2xl text-gray-700 hover:text-blue-600"></i>
 					</a>
 
@@ -66,7 +78,7 @@ const Hero = () => {
 						<i className="bx bxl-youtube text-2xl text-gray-700 hover:text-red-600"></i>
 					</a>
 
-					<a href="https://github.com" target="_blank">
+					<a href="https://github.com/Ashutosh-03547" target="_blank">
 						<i className="bx bxl-github text-2xl text-gray-700 hover:text-black"></i>
 					</a>
 				</div>
@@ -79,7 +91,7 @@ const styles = {
 	section: {
 		padding: "8rem 0 4rem",
 		background: "linear-gradient(180deg,#0f172a 0%,#071033 100%)",
-		color: "#e6eef8",
+		
 		minHeight: "100vh",
 		display: "flex",
 		alignItems: "center",
@@ -90,6 +102,7 @@ const styles = {
 		marginBottom: "0.5rem",
 		lineHeight: 1.1,
 		fontWeight: "700",
+		color: "#4f46e5",
 	},
 
 	title2: {
@@ -125,7 +138,7 @@ const styles = {
 
 	social: {
 		background: "#fff",
-		padding: "13px",
+		padding: "12px",
 		borderRadius: "10px",
 		boxShadow: "0 4px 15px rgba(0,0,0,.15)",
 		zIndex: 10,

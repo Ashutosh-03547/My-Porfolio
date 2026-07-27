@@ -1,21 +1,25 @@
 import React from 'react';
 
 const frontendSkills = [
-    { name: "HTML", level: "Basic", icon: "bx bx-code-alt"  },
+    { name: "HTML", level: "Advanced", icon: "bx bx-code-alt"  },
     { name: "CSS", level: "Advanced", icon: "bx bx-hash" },
     { name: "JavaScript", level: "Intermediate", icon: "bx bxl-javascript" },
     { name: "Bootstrap", level: "Intermediate", icon: "bx bxl-bootstrap" },
+    { name: "Tailwind", level: "Intermediate", icon: "bx bxl-tailwind-css" },
     { name: "Git", level: "Intermediate", icon: "bx bxl-git" },
     { name: "React", level: "Intermediate", icon: "bx bxl-react" },
+    { name: "REST APIt", level: "Basic", icon: "bx bx-network-chart" },
 ];
 
 const backendSkills = [
-    { name: "PHP", level: "Intermediate", icon: "bx bxl-php" },
+    { name: "PHP", level: "Basic", icon: "bx bxl-php" },
     { name: "Node JS", level: "Basic", icon: "bx bxl-nodejs" },
-    { name: "Python", level: "Intermediate", icon: "bx bxl-python" },
-    { name: "MySQL", level: "Intermediate", icon: "bx bx-data" },
+    { name: "Python", level: "Basic", icon: "bx bxl-python" },
+    { name: "MySQL", level: "Basic", icon: "bx bx-data" },
     { name: "Firebase", level: "Intermediate", icon: "bx bx-server" },
-    { name: "SQL", level: "Intermediate", icon: "bx bx-data" },
+    { name: "SQL", level: "Basic", icon: "bx bx-data" },
+    { name: "MongoDB", level: "Basic", icon: "bx bx-data" },
+    { name: "WebSocket", level: "Basic", icon: "bx bx-link-alt" },
 ];
 
 const Skill = () => {

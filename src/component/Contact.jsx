@@ -14,7 +14,7 @@ const Contact = () => {
                         <i className="bx bx-mail-send" style={styles.icon}></i>
 
                         <h4 style={styles.cardTitle}>Email</h4>
-                        <p style={styles.cardText}>ashutoshpathy@email.com</p>
+                        <p style={styles.cardText}>pathyashutosh65@email.com</p>
 
                         <a
                             href="mailto:ashutoshpathy@email.com"
@@ -51,7 +51,7 @@ const Contact = () => {
                         <p style={styles.cardText}>Ashutosh Pathy</p>
 
                         <a
-                            href="https://linkedin.com/in/your-linkedin"
+                            href="https://www.linkedin.com/in/ashutosh-pathy-745905323/"
                             target="_blank"
                             rel="noreferrer"
                             style={styles.link}

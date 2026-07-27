@@ -4,23 +4,25 @@ import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
+import project5 from "../assets/project5.png";
+import project6 from "../assets/project6.png";
 
 
 const projects = [
   {
     id: 1,
-    image: project1,
+    image: project2,
     title: "MERN Chat Application",
-    category: "App",
+    category: "Web",
     github: "https://github.com/yourusername/chat-app",
     demo: "https://chat-app.vercel.app",
   },
 
   {
     id: 2,
-    image: project2,
-    title: "Portfolio Website",
-    category: "Web",
+    image: project1,
+    title: "Weather App",
+    category: "App",
     github: "https://github.com/yourusername/portfolio",
     demo: "https://portfolio.vercel.app",
   },
@@ -28,8 +30,8 @@ const projects = [
   {
     id: 3,
     image: project3,
-    title: "Weather App",
-    category: "App",
+    title: "Anime Sreaming Website",
+    category: "Web",
     github: "#",
     demo: "#",
   },
@@ -37,15 +39,31 @@ const projects = [
   {
     id: 4,
     image: project4,
-    title: "Dashboard UI",
-    category: "Design",
+    title: "Food Delivery",
+    category: "App",
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 5,
+    image: project5,
+    title: "Health Monitoring",
+    category: "Web",
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 6,
+    image: project6,
+    title: "Portfolio",
+    category: "Web",
     github: "#",
     demo: "#",
   },
 ];
 
 
-const filters = ["All", "Web", "App", "Design"];
+const filters = ["All", "Web", "App"];
 
 const Project = () => {
   const [active, setActive] = useState("All");
@@ -76,7 +94,7 @@ const Project = () => {
         ))}
       </div>
 
-      {/* Project Cards */}
+      
       <div style={styles.container}>
         {filtered.map((project) => (
           <div
@@ -107,7 +125,7 @@ const Project = () => {
               rel="noreferrer"
               style={styles.demoButton}
             >
-              Demo
+              Details
               <i
                 className="bx bx-right-arrow-alt"
                 style={{ marginLeft: "6px", fontSize: "20px" }}
@@ -180,8 +198,10 @@ const styles = {
     padding: "1.2rem",
     transition: "0.3s",
     boxShadow: "0 5px 15px rgba(0,0,0,.08)",
+    
     background: "#fff",
   },
+  
 
   image: {
     width: "100%",
