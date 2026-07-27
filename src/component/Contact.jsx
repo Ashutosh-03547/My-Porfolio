@@ -121,10 +121,10 @@ const styles = {
 
     container: {
         width: "100%",
-        maxWidth: "950px",
+        maxWidth: "900px",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit,minmax(420px,1fr))",
-        gap: "4rem",
+        gap: "3rem",
     },
 
     left: {
