@@ -42,7 +42,7 @@ const projects = [
     title: "Food Delivery",
     category: "App",
     github: "#",
-    demo: "#",
+    demo: "https://dinnio.netlify.app/",
   },
   {
     id: 5,
